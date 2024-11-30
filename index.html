@@ -1,29 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        let firstNumber;
-        let secondNumber;
-        let operation;
+      let firstNumber;
+      let secondNumber;
+      let operator;
 
-        function add (a,b){
-            return a + b;
-        }
-        function subtract (a, b){
-            return a - b;
-        }
-        function multiply(){
-            return a * b
-        }
-        function divide(a,b){
-            return a / b 
-        }
+      function add(a, b) {//basic math functions
+        return a + b;
+      }
+      function subtract(a, b) {
+        return a - b;
+      }
+      function multiply() {
+        return a * b;
+      }
+      function divide(a, b) {
+        return a / b;
+      }
 
+      function operate(operator, a, b) {//function thath takes a operator and two numbers
+        if (operator === "+") {
+          return add(a, b);
+        } else if (operator === "-") {
+          return subtract(a, b);
+        } else if (operator === "*") {
+          return multiply(a, b);
+        } else if (operator === "/") {
+          return divide(a, b);
+        } else {
+          return "invalid operator";
+        }
+      }
     </script>
-</body>
+  </body>
 </html>
