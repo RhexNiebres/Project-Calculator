@@ -9,67 +9,97 @@
   <body>
     <div id="calculator">
       <input id="display" type="text" />
-        <div id="buttonsContainer">
-            <div>
-                <button class="operator" data-operator="+">+</button>
-                <button class="operator" data-operator="-">-</button>
-                <button class="operator" data-operator="*">x</button>
-                <button class="operator" data-operator="/">/</button>
-            </div>
-            <div>
-                <button class="operator" data-operator="=">=</button>
-                <button class="clearButton">CE</button>
-                <button class="number" data-number="1">1</button>
-                <button class="number" data-number="2">2</button>
-            </div>
-            <div>
-                <button class="number" data-number="3">3</button>
-                <button class="number" data-number="4">4</button>
-                <button class="number" data-number="5">5</button>
-                <button class="number" data-number="6">6</button>
-            </div>
-            <div>
-                <button class="number" data-number="7">7</button>
-                <button class="number" data-number="8">8</button>
-                <button class="number" data-number="9">9</button>
-                <button class="number" data-number="0">0</button>
-            </div>
-
+      <div id="buttonsContainer">
+        <div>
+          <button class="operator">+</button>
+          <button class="operator">-</button>
+          <button class="operator">x</button>
+          <button class="operator">/</button>
         </div>
+        <div>
+          <button class="operator">=</button>
+          <button class="clearButton">CE</button>
+          <button class="number">1</button>
+          <button class="number">2</button>
+        </div>
+        <div>
+          <button class="number">3</button>
+          <button class="number">4</button>
+          <button class="number">5</button>
+          <button class="number">6</button>
+        </div>
+        <div>
+          <button class="number">7</button>
+          <button class="number">8</button>
+          <button class="number">9</button>
+          <button class="number">0</button>
+        </div>
+      </div>
     </div>
     <script>
-      let firstNumber;
-      let secondNumber;
+      let num1;
+      let num2;
       let operator;
+      let currentInput = "";
 
-      function add(a, b) {
+      function add(num1, num2) {
         //basic math functions
-        return a + b;
+        return num1 + num2;
       }
-      function subtract(a, b) {
-        return a - b;
+      function subtract(num1, num2) {
+        return num1 - num2;
       }
-      function multiply() {
-        return a * b;
+      function multiply(num1, num2) {
+        return num1 * num2;
       }
-      function divide(a, b) {
-        return a / b;
+      function divide(num2, num2) {
+        return num2 === 0 ? "cant divide by 0." : num1 / num2;
       }
 
-      function operate(operator, a, b) {
+      function operate(operator, num1, num2) {
         //function thath takes a operator and two numbers
         if (operator === "+") {
-          return add(a, b);
+          return add(num1, num2);
         } else if (operator === "-") {
-          return subtract(a, b);
+          return subtract(num1, num2);
         } else if (operator === "*") {
-          return multiply(a, b);
+          return multiply(num1, num2);
         } else if (operator === "/") {
-          return divide(a, b);
+          return divide(num1, num2);
         } else {
           return "invalid operator";
         }
       }
+
+      const displayElement = document.getElementById("display"); //reference display area
+
+      function updateDisplay() {
+        displayElement.value = value || "0";
+      }
+      document.querySelectorAll(".number").forEach((button) => {
+        button.addEventListener("click", () => {
+          //for each button in class number display it as current input
+          currentInput += button.textContent;
+          updateDisplay(currentInput);
+        });
+      });
+
+      document.querySelectorAll("operator").forEach((button) => {
+        button.addEventListener("click", () => {
+          //for each button in class operator display it as current input
+          const operatorText = button.textContent;
+
+          if (operatorText === "CE") {
+            currentInput = "";
+            num1 = "null";
+            operator = "";
+            updateDisplay("0"); //calls updateDisplay to display 0
+          } else if (operatorText === "=") {
+            if (num1 !== null && operator !== null && currentInput) {
+            }
+          }
+        });
+      });
     </script>
   </body>
 </html>
