@@ -3,34 +3,40 @@ body {
   justify-content: center; /*horizontal*/
   align-items: center; /*vertical*/
   height: 100vh;
+  background-color: #323232;
 }
+
 .calculator {
   display: inline-block;
   margin: 0 auto;
-
 }
 #display {
-  width: 350px;
-  height: 40px;
+  width: 250px;
+  height: 55px;
   text-align: right;
   padding: 10px;
-  font-size: 24px;
+  font-size: 70px;
   margin-bottom: 10px;
   border: 1px solid black;
   border-radius: 10px;
+  color: white;
 }
-.buttonsContainer {
-  width: 320px;
-  
+#buttonContainer
+{
+    background-color: black;
+    padding: 50px;
+    border-color: #555555;
+    border-radius: 15px;
 }
 button {
   width: 90px;
   height: 90px;
   font-size: 40px;
   cursor: pointer;
-  border: 1px solid white;
+  border: 1px solid ;
   border-radius: 10px;
 }
+
 .operator {
   background-color: #f0ad4e;
 }
@@ -38,6 +44,9 @@ button {
 .clearButton {
   background-color: #d9534f;
   color: white;
+  height: 50px;
+  border-radius: 15px;
+  
 }
 .number {
   background-color: black;
