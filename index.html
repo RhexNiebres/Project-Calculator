@@ -3,28 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="styles.css" rel="stylesheet" />
     <title>Calculator</title>
   </head>
   <body>
     <div id="calculator">
-        <input id="display" type="text">
+      <input id="display" type="text" />
         <div id="buttonsContainer">
-            <button class="operator">+</button>
-            <button class="operator">-</button>
-            <button class="operator">*</button>
-            <button class="operator">/</button>
-            <button class="operator">=</button>
-            <button class="clearButton">clear</button>
-            <button class="number">1</button>
-            <button class="number">2</button>
-            <button class="number">3</button>
-            <button class="number">4</button>
-            <button class="number">5</button>
-            <button class="number">6</button>
-            <button class="number">7</button>
-            <button class="number">8</button>
-            <button class="number">9</button>
-            <button class="number">0</button>
+            <div>
+                <button class="operator" data-operator="+">+</button>
+                <button class="operator" data-operator="-">-</button>
+                <button class="operator" data-operator="*">x</button>
+                <button class="operator" data-operator="/">/</button>
+            </div>
+            <div>
+                <button class="operator" data-operator="=">=</button>
+                <button class="clearButton">CE</button>
+                <button class="number" data-number="1">1</button>
+                <button class="number" data-number="2">2</button>
+            </div>
+            <div>
+                <button class="number" data-number="3">3</button>
+                <button class="number" data-number="4">4</button>
+                <button class="number" data-number="5">5</button>
+                <button class="number" data-number="6">6</button>
+            </div>
+            <div>
+                <button class="number" data-number="7">7</button>
+                <button class="number" data-number="8">8</button>
+                <button class="number" data-number="9">9</button>
+                <button class="number" data-number="0">0</button>
+            </div>
+
         </div>
     </div>
     <script>
@@ -32,7 +42,8 @@
       let secondNumber;
       let operator;
 
-      function add(a, b) {//basic math functions
+      function add(a, b) {
+        //basic math functions
         return a + b;
       }
       function subtract(a, b) {
@@ -45,7 +56,8 @@
         return a / b;
       }
 
-      function operate(operator, a, b) {//function thath takes a operator and two numbers
+      function operate(operator, a, b) {
+        //function thath takes a operator and two numbers
         if (operator === "+") {
           return add(a, b);
         } else if (operator === "-") {
@@ -58,7 +70,6 @@
           return "invalid operator";
         }
       }
-
     </script>
   </body>
 </html>
