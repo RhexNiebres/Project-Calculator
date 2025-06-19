@@ -12,7 +12,7 @@ body {
 }
 #display {
   width: 250px;
-  height: 55px;
+  height: 65px;
   text-align: right;
   padding: 10px;
   font-size: 70px;
@@ -33,9 +33,17 @@ button {
   height: 90px;
   font-size: 40px;
   cursor: pointer;
-  border: 1px solid ;
+
   border-radius: 10px;
+  transition: all 0.2s ease;
+
 }
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
 
 .operator {
   background-color: #f0ad4e;
@@ -44,7 +52,8 @@ button {
 .clearButton {
   background-color: #d9534f;
   color: white;
-  height: 50px;
+  height: 90px;
+  margin-left: 6.5px;
   border-radius: 15px;
   
 }
